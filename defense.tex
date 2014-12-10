@@ -1,0 +1,349 @@
+\documentclass{beamer}
+
+\mode<presentation>
+{
+%  \usetheme{Boadilla}
+%  \usetheme[blue,compress,numbers,nonav]{Trondheim}
+   \usetheme[blue,compress]{Madrid}
+  \usefonttheme[onlymath]{serif}
+  \setbeamercovered{transparent}
+}
+
+\usepackage{tikz}
+\usepackage{multimedia}
+\usepackage[buttonsize=10.0pt]{animate}
+\usepackage{hyperref}
+
+\usepackage[polish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{mathptmx}
+\usepackage{helvet}
+\usepackage{courier}
+\usepackage{graphics}
+\usepackage[T1]{fontenc}
+\usepackage[absolute,overlay]{textpos}
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+
+
+\selectlanguage{polish}
+
+\title[Powstawanie planetezymali]
+{Powstawanie planet w wyniku połączonego działania niestabilności płynowych w dyskach protoplanetarnych}
+\author[Kacper Kowalik{}]{Kacper Kowalik}
+\institute[CA UMK]{Centrum Astronomii UMK}
+\date[15.12.2014]{Obrona rozprawy doktorskiej}
+
+\subject{planet formation}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+%\frametitle{Kontekst astrofizyczny}
+Planety formują się w dyskach poprzez zderzenia i zlepianie się cząstek (\alert{hipoteza planetezymali} Safronov, 1969).
+\begin{itemize}
+\item Od pyłu do planetozymali:
+\begin{description}
+\uncover<1>{\item[$\mu$m$\rightarrow$cm:] Oddziaływania międzycząsteczkowe (van der Waals, wiązania wodorowe) prowadzą do koagulacji (JD).}
+\only<1-2>{\item[cm$\rightarrow$km:] Połączone działanie niestabilności płynowych (MRI, KHI, SI, GI, \ldots).}
+\end{description}
+\uncover<1>{
+\item Od planetozymali do protoplanet:
+\begin{description}
+\item[km$\rightarrow 10^3$km:] Grawitacja.
+\end{description}
+\item Od protoplanet do planet:
+\begin{description}
+\item[Gazowe olbrzymy:] Akrecja gazowych otoczek.
+\item[Planety skaliste:] Zderzenia protoplanet.
+\end{description}}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+
+\pgfdeclareimage[interpolate=true,height=0.4\textheight]{d1}{dullemond1}
+\pgfdeclareimage[interpolate=true,height=0.4\textheight]{d2}{dullemond2}
+\pgfdeclareimage[interpolate=true,height=0.35\textheight]{mri}{mri}
+\pgfdeclareimage[interpolate=true,height=0.36\textheight]{khi}{khi}
+
+%\frametitle{Bariera 1m @ 1 AU}
+\begin{block}{Procesy hamujące wzrost cząstek pyłu}
+\begin{itemize}
+\item Duża względna prędkość cząstek prowadzi do fragmentacji przy zderzeniu (Blum \& Wurm 2008)
+\uncover<2->{\item Silne ograniczenie skali czasowej na skutek radialnego dryfu pyłu.}
+\uncover<3->{\item Turbulencja (MRI) przeciwdziała sedymentacji.}
+\uncover<4->{\item Sedymentacja prowadzi do niestabilności KH.}
+\end{itemize}
+\end{block}
+\begin{center}
+\only<1>{\pgfuseimage{d1}}
+\only<2>{\pgfuseimage{d2}}
+\only<3>{\pgfuseimage{mri} \\
+   {\scriptsize Johansen A., \& Klahr H., \emph{ApJ}, \bf{634}}
+}
+\only<4>{\pgfuseimage{khi} \\
+   {\scriptsize Johansen A., Henning Th., \& Klahr H. \emph{ApJ}, \bf{643}}
+}  
+\end{center}
+\end{frame}
+
+\begin{frame}
+%\frametitle{Maksima w rozkładzie ciśnienia przechwytują gaz}
+\pgfdeclareimage[interpolate=true,height=0.8\textheight]{d3}{dullemond3}
+\pgfdeclareimage[interpolate=true,width=0.45\textwidth]{a1}{arm1}
+\pgfdeclareimage[interpolate=true,width=0.45\textwidth]{a2}{arm2}
+
+\begin{center}
+  \pgfuseimage{a1} \pgfuseimage{a2} \\
+  {\scriptsize Rice, W.K.M., G. Lodato, J.E. Pringle, P.J. Armitage, \& I.A. Bonnell, \emph{MNRAS}, \bf{372}}
+\end{center}
+\end{frame}
+
+\end{document}
+
+\begin{frame}
+%\frametitle{Niestabilność strumieniowa}
+\pgfdeclareimage[interpolate=true,width=.51\textwidth]{kk}{stream_kk2}
+\pgfdeclareimage[interpolate=true,width=.48\textwidth]{aj}{stream_aj}
+\begin{columns}
+   \begin{column}{0.5\textwidth}
+      \begin{center}
+         \pgfuseimage{aj}\\
+         {\scriptsize Johansen A., \& Youdin A. (2007), \emph{ApJ}, \bf{662}}
+      \end{center}
+   \end{column}
+   \begin{column}{0.5\textwidth}
+      \begin{center}
+         \movie[poster,externalviewer,label=ccmovie]{\pgfuseimage{kk}}{stream_BA_512.avi}\\
+         {\scriptsize Kowalik K., Hanasz M., Wóltański D.,~ \emph{,,New Technologies for Probing the Diversity of Brown Dwarfs and Exoplanets''}, (2009)}
+      \end{center}
+   \end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+%\frametitle{Current state of PIERNIK art}
+\only<1>{
+\pgfdeclareimage[interpolate=true,width=0.7\textwidth]{logoHD}{logoHD}
+\pgfdeclareimage[interpolate=true,height=2.5cm]{arfur}{arfur}
+\pgfdeclareimage[interpolate=true,height=2.5cm]{wolt}{wolt}
+\pgfdeclareimage[interpolate=true,height=2.5cm]{szef}{szef}
+\pgfdeclareimage[interpolate=true,height=2.5cm]{jd}{jd}
+\begin{center}
+\pgfuseimage{logoHD}
+\end{center}
+\begin{center}
+\begin{tabular}{cccc}
+   \pgfuseimage{jd} & 
+   \pgfuseimage{arfur} & 
+   \pgfuseimage{szef} &
+   \pgfuseimage{wolt} \\ 
+   \scriptsize{Joanna Dr\k{a}\.zkowska} &
+   \scriptsize{Artur Gawryszczak} & 
+   \scriptsize{Micha\l{} Hanasz} &
+   \scriptsize{Dominik W\'olta\'nski}
+\end{tabular}
+\href{http://piernik.astri.umk.pl/}{http://piernik.astri.umk.pl/}
+\end{center}
+}
+\only<2>{
+\begin{itemize}
+   \item Solver hydrodynamiczny -- Relaxing TVD (Jin \& Xin, 1995; Trac \& Pen, 2003)
+   \item Geometria cylindryczna (Skinner \& Ostriker, 2010), wielopłynowość, oddziaływanie między pyłem, a gazem przy użyciu ,,jawnego'' i ,,pół-niejawnego'' schematu (Tilley \& Balsara, 2008).
+   \item Samograwitacja (multigrid, multipole, direct FFT)
+   \item Efektywna parallelizacja zagadanienia.
+\end{itemize}
+Warunki początkowe:
+{\scriptsize
+\begin{enumerate}
+   \item MMSN: $\Sigma(R) = 1700\cdot r^{-1.5}$ g cm$^2$, $T(R) = 150 ( R / 1 \textrm{AU} )^{-0.429}$ K.
+   \item $[2\div12,0\div2\pi,-0.5\div0.5]$ w $N=(2048,5,256)$
+   \item zaburzenie prędkości pyłu $\sim10^{-7} e^{-i(k_x x + k_y y + k_z z)}$ albo biały szum
+   \item ,,killing zones'' $\frac{\textrm{d}X}{\textrm{d}t} = -\frac{X-X_0}{\tau}f(r)$, wewnętrzne obcięcie profilu gęstości.
+   \item Czas numerycznej relaksacji układu $T_{\textrm{relax}} = 15$ yr.
+\end{enumerate}
+}
+}
+\end{frame}
+
+\begin{frame}
+\pgfdeclareimage[interpolate=true,height=0.9\textheight]{p1}{plot}
+\pgfdeclareimage[interpolate=true,width=0.62\textwidth]{p2}{combined}
+\pgfdeclareimage[interpolate=true,width=0.62\textwidth]{p2a}{low}
+\pgfdeclareimage[interpolate=true,width=0.62\textwidth]{p2b}{high}
+\pgfdeclareimage[interpolate=true,height=0.9\textheight]{p3}{growth}
+\begin{center}
+%\only<1>{\pgfuseimage{p1}}
+\only<1>{
+\begin{columns}
+   \begin{column}{0.4\textwidth}
+     Zróżnicowanie średnicy ziaren pyłu: $10, 50, 100$~cm for $\epsilon=1.0$.
+   \end{column}
+   \begin{column}{0.6\textwidth}
+     \movie[poster,externalviewer,label=ccmovie]{\pgfuseimage{p2}}{combined.avi}
+   \end{column}
+\end{columns}
+\begin{columns}
+   \begin{column}{0.4\textwidth}
+     Zróżnicowanie $\epsilon$: $0.1, 0.01$ dla $50$~cm ziaren pyłu.
+   \end{column}
+   \begin{column}{0.6\textwidth}
+     \movie[poster,externalviewer,label=ccmovie]{\pgfuseimage{p2a}}{stream_50cm_low.avi}
+   \end{column}
+\end{columns}
+\begin{columns}
+   \begin{column}{0.4\textwidth}
+     Testy zbieżności
+   \end{column}
+   \begin{column}{0.6\textwidth}
+     \movie[poster,externalviewer,label=ccmovie]{\pgfuseimage{p2b}}{stream_50cm_high.avi}
+   \end{column}
+\end{columns}
+}
+%\only<3>{\pgfuseimage{p3}}
+\end{center}
+\end{frame}
+
+\begin{frame}
+%\frametitle{Obecne prace -- Analiza zebranych danych}
+\only<1>{
+Początkowy etap rozwoju niestabilności strumieniowej (faza liniowa) daje się ,,potraktować'' analitycznie w układzie ,,kostki ścinanej'', poprzez linearyzcję 8 równań PDE opisujących 8 wielkości fizycznych. Otrzymujemy informację na temat stanu układu zapisaną jako superpozycję fal płaskich
+\[ \tilde{f}\exp\left[i\left(k_x + k_z - \omega t\right)\right],\textrm{ gdzie }
+   \tilde{f}=\left[\tilde{\rho_d},\tilde{w}_x,\tilde{w}_y,\tilde{w}_z,\tilde{\rho_g},\tilde{u}_x,\tilde{u}_y,\tilde{u}_z\right]. \]
+\[ \mathbf{A(\omega)} \tilde{f} = \vec{b} \] 
+Schemat analizy:
+\begin{itemize}
+\item Wybieramy z naszej globalnej symulacji obszar na tyle mały, że możemy go traktować jako lokalne przybliżenie dysku (,,łatka'').
+\item Dla zbioru stałych określającego naszą ,,łatkę'' znajdujemy rozwiązania zespolone dla równania 8 stopnia ($\det|\mathbf{A(\omega)}|=0 \Rightarrow \omega$).
+\item Wyznaczamy wzajemne relacje pomiędzy amplitudami dla ustalonego jednego zaburzenia np. $\rho_d$. ($\tilde{f} = \mathbf{A}^{-1}\vec{b}$) . 
+\end{itemize}
+}
+
+\only<2>{
+\pgfdeclareimage[interpolate=true,width=0.95\textwidth]{a1}{amps}
+\begin{center}\pgfuseimage{a1}\end{center}
+}
+\only<3>{
+\pgfdeclareimage[interpolate=true,width=0.95\textwidth]{a1}{fale}
+\begin{center}\pgfuseimage{a1}\end{center}
+}
+\end{frame}
+
+\begin{frame}
+%\frametitle{Obecne prace -- pełne symulacje 3D} 
+Optymalna liczba procesorów dla symulacji w niskiej rozdzielczości ($2048\times128\times256$) to \alert{256}. Czas obliczeń: 1 miesiąc (\alert{720h}), liczba symulacji: \alert{kilkanaście}.
+\pgfdeclareimage[interpolate=true,width=0.5\textwidth]{pl1}{diffusion}
+\pgfdeclareimage[interpolate=true,width=0.5\textwidth]{pl2}{dysk}
+\begin{columns}
+   \begin{column}{0.5\textwidth}
+      \pgfuseimage{pl1}
+   \end{column}
+   \begin{column}{0.5\textwidth}
+      \pgfuseimage{pl2}
+   \end{column}
+\end{columns}
+\end{frame}
+
+\frame{
+   %\frametitle{Idea}
+   \begin{center}
+      \includegraphics[width=0.95\textwidth]{idea.png}
+      \begin{itemize}
+         \item{\includegraphics[height=0.6cm]{piernik_logo_HD.png} }
+         \item Algorytm Monte Carlo przy użyciu cząstek reprezentatywnych (Zsom \& Dullemond, 2008)
+         \item Prosty model kolizji (Ormel et al., 2007) -- decydujący czynnik $\Delta v$.
+      \end{itemize}
+   \end{center}
+}
+
+\frame{
+%\frametitle{Założenia}
+   Cząstki:
+      \begin{itemize}
+         \item są równomiernie rozdystrybuowane po objętości komórek Piernika -- nie ma potrzeby znania ich dokładnego położenia,
+         \item mogą się zderzać z innymi cząstkami tylko w obrębie jednej komórki,
+         \item mogą przemieszczać się pomiędzy komórkami,
+         \item mają określony wektor prędkości,
+         \item są poddawane oporowi aerodynamicznemu $\vec{F} = - \frac{1}{t_s}\left(\vec{v_p} - \vec{v_g} \right).$
+      \end{itemize}
+   Ponadto:
+      \begin{itemize}
+         \item{Względna prędkość cząstek jest obliczana na podstawie wyrażenia 
+               $\Delta v_{ik} = \sqrt{\Delta v_B^2 + \Delta v_T^2 + \left(\vec{v_i} - \vec{v_k}\right)^2}$,\\
+               gdzie $\Delta v_B$ wynika z ruchów Browna, \\
+               $\Delta v_T$ wynika z ,,podskalowej'' turbulencji, 
+               $|\vec{v_i} - \vec{v_k}|$ prędkości cząstek wzbudzone na skutek oddziaływania z gazem}
+         \item{Bierzemy pod uwagę dyfuzję pyłu powodowaną podskalową turbulencją}
+      \end{itemize}
+}
+
+\frame{
+   %\frametitle{Adwekcja, dyfuzja}
+   \begin{center}
+   \includegraphics[height=0.7\textheight]{test2.png}
+   \end{center}
+}
+
+\begin{frame}
+%\frametitle{Widmo energi kinetycznej gazu}
+      \begin{center}
+      \includegraphics[height=0.7\textheight]{spectrum3d.png}
+      \end{center}
+\end{frame}
+
+\begin{frame}
+%\frametitle{2D}
+      \pgfdeclareimage[interpolate=true,width=0.8\textwidth]{turb}{turb.png}
+      \begin{center}
+      \movie[poster,externalviewer,label=ccmovie]{\pgfuseimage{turb}}{turb.avi}\\
+      \end{center}
+\end{frame}
+
+\begin{frame}
+%\frametitle{3D}
+      \begin{center}
+      \includegraphics[height=0.7\textheight]{dust3d.png}
+      \end{center}
+\end{frame}
+
+\begin{frame}
+\scriptsize
+Problemy:
+\begin{enumerate}
+  \item \emph{Bardzo silny} wpływ turbulencji na fizyczne wyniki symulacji.
+  \item Całość jest \emph{przeraźliwie} wolna.
+\end{enumerate}
+Wykonana praca:
+\begin{itemize}
+ \item zrównoleglenie modułu MC pod MPI (04/2011)  (2)
+ \item dodanie tracera (05/2011) (1)
+ \item przystosowanie modulu turbulencji z kodu Godunov (by G. Kowal) do Piernika (05/2011) (1)
+ \item zadaptowanie restartow na potrzeby czastek i turbulencji (06/2011) (1)
+ \item dodanie solvera Riemannowskiego (07/2011) (1)
+ \item optymilizacja kodu MC (serial) (09/2011) (2)
+ \item rozpoczęcie prac nad “portowaniem” MC na GPU (Damian Kaliszan, Artur Trojanowski) (11/2011) (2)
+ \item adaptive time-stepping, multiresolution (11/2011) (2)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+%\frametitle{Dlaczego potrzebujemy nowego solwera -- Wengen4}
+Izotermiczny 3D dysk na skraju niestabilności grawitacyjnej.
+\begin{columns}[c]
+\column{0.5\textwidth}
+\pgfdeclareimage[interpolate=true,width=.95\textwidth]{fl}{flash.png}
+\pgfuseimage{fl}\\ {\scriptsize Flash (courtesy of A. Gawryszczak)}
+\column{0.5\textwidth}
+\pgfdeclareimage[interpolate=true,width=.95\textwidth]{rtvd}{rtvd.png}
+\pgfdeclareimage[interpolate=true,width=.95\textwidth]{mhm}{mhm.png}
+\pgfdeclareimage[interpolate=true,width=.95\textwidth]{rtvd}{rtvd.png}
+\alt<2>{\movie[poster,externalviewer,label=ccmovie]{\pgfuseimage{mhm}}{wt4_512x512x104.avi}\\ {\scriptsize Piernik MHM}}
+{\pgfuseimage{rtvd}\\ {\scriptsize Piernik RTVD (courtesy of C. Monet)}}
+\end{columns}
+\end{frame}
+\end{document}
