@@ -27,7 +27,13 @@
 \setlength{\TPHorizModule}{1mm}
 \setlength{\TPVertModule}{1mm}
 \def\strike#1#2{\temporal<#1>{#2}{\sout{#2}}{\sout{#2}}}
-
+\newcommand\earth{\oplus}%
+\def\Mearth{\hbox{$\mathrm{\thinspace M_{\earth}}$}}
+\def\Mceres{\hbox{$\mathrm{\thinspace M_{\textrm{ceres}}}$}}
+\def\K{\hbox{$\thinspace\textrm{K}$}}
+\def\Msun{\hbox{$\mathrm{\thinspace M_{\odot}}$}}
+\def\AU{\hbox{$\thinspace\textrm{AU}$}}
+\def\yr{\hbox{$\thinspace\textrm{lat}$}}
 
 \selectlanguage{polish}
 
@@ -136,7 +142,7 @@ Planety formują się w dyskach poprzez zderzenia i zlepianie się cząstek (\al
          \item Youdin \& Goodman (2005) odkyrywaja (na nowo) proces, w którym cząsteczki pyłu na skutek tarcia aerodynamicznego
 	 	mogą tworzyć przejściowe zagęszczenia.
          \item Johansen \& Youdin (2007) pokazują, że zagęszczenia pyłu spowodowane niestabilnością strumieniową, w warunkach panujacych
-	       w dyskach protoplanetarnych, mogą osiągąć gęstości o trzy rzędy wielkości większę niż początkowa gęstość pyłu.
+	       w dyskach protoplanetarnych, mogą osiągąć gęstości o trzy rzędy wielkości większe niż początkowa gęstość pyłu.
 	 \item Pozwala to zapostulować Johansenowi i in. (2007), że niestabilność strumieniowa może prowadzić do wytworzenia się w dysku
 	       protoplanetarnym grawitacyjnie związanych obiektów, utworzonych z ziaren pyłu $\ll1m$.
       \end{enumerate}
@@ -289,194 +295,329 @@ Schemat analizy:
 \end{itemize}
 }
 
-%\only<2>{
-%\pgfdeclareimage[interpolate=true,width=0.95\textwidth]{a1}{amps}
-%\begin{center}\pgfuseimage{a1}\end{center}
-%}
-%\only<3>{
-%\pgfdeclareimage[interpolate=true,width=0.95\textwidth]{a1}{fale}
-%\begin{center}\pgfuseimage{a1}\end{center}
-%}
-\end{frame}
-
-\end{document}
-
-
-\begin{frame}
-\pgfdeclareimage[interpolate=true,height=0.9\textheight]{p1}{plot}
-\pgfdeclareimage[interpolate=true,width=0.62\textwidth]{p2}{combined}
-\pgfdeclareimage[interpolate=true,width=0.62\textwidth]{p2a}{low}
-\pgfdeclareimage[interpolate=true,width=0.62\textwidth]{p2b}{high}
-\pgfdeclareimage[interpolate=true,height=0.9\textheight]{p3}{growth}
-\begin{center}
-%\only<1>{\pgfuseimage{p1}}
-\only<1>{
-\begin{columns}
-   \begin{column}{0.4\textwidth}
-     Zróżnicowanie średnicy ziaren pyłu: $10, 50, 100$~cm for $\epsilon=1.0$.
-   \end{column}
-   \begin{column}{0.6\textwidth}
-     \movie[poster,externalviewer,label=ccmovie]{\pgfuseimage{p2}}{combined.avi}
-   \end{column}
-\end{columns}
-\begin{columns}
-   \begin{column}{0.4\textwidth}
-     Zróżnicowanie $\epsilon$: $0.1, 0.01$ dla $50$~cm ziaren pyłu.
-   \end{column}
-   \begin{column}{0.6\textwidth}
-     \movie[poster,externalviewer,label=ccmovie]{\pgfuseimage{p2a}}{stream_50cm_low.avi}
-   \end{column}
-\end{columns}
-\begin{columns}
-   \begin{column}{0.4\textwidth}
-     Testy zbieżności
-   \end{column}
-   \begin{column}{0.6\textwidth}
-     \movie[poster,externalviewer,label=ccmovie]{\pgfuseimage{p2b}}{stream_50cm_high.avi}
-   \end{column}
-\end{columns}
-}
-%\only<3>{\pgfuseimage{p3}}
-\end{center}
-\end{frame}
-
-\begin{frame}
-%\frametitle{Obecne prace -- Analiza zebranych danych}
-\only<1>{
-Początkowy etap rozwoju niestabilności strumieniowej (faza liniowa) daje się ,,potraktować'' analitycznie w układzie ,,kostki ścinanej'', poprzez linearyzcję 8 równań PDE opisujących 8 wielkości fizycznych. Otrzymujemy informację na temat stanu układu zapisaną jako superpozycję fal płaskich
-\[ \tilde{f}\exp\left[i\left(k_x + k_z - \omega t\right)\right],\textrm{ gdzie }
-   \tilde{f}=\left[\tilde{\rho_d},\tilde{w}_x,\tilde{w}_y,\tilde{w}_z,\tilde{\rho_g},\tilde{u}_x,\tilde{u}_y,\tilde{u}_z\right]. \]
-\[ \mathbf{A(\omega)} \tilde{f} = \vec{b} \] 
-Schemat analizy:
-\begin{itemize}
-\item Wybieramy z naszej globalnej symulacji obszar na tyle mały, że możemy go traktować jako lokalne przybliżenie dysku (,,łatka'').
-\item Dla zbioru stałych określającego naszą ,,łatkę'' znajdujemy rozwiązania zespolone dla równania 8 stopnia ($\det|\mathbf{A(\omega)}|=0 \Rightarrow \omega$).
-\item Wyznaczamy wzajemne relacje pomiędzy amplitudami dla ustalonego jednego zaburzenia np. $\rho_d$. ($\tilde{f} = \mathbf{A}^{-1}\vec{b}$) . 
-\end{itemize}
-}
-
 \only<2>{
-\pgfdeclareimage[interpolate=true,width=0.95\textwidth]{a1}{amps}
+\pgfdeclareimage[interpolate=true,width=0.85\textwidth]{a1}{amps}
 \begin{center}\pgfuseimage{a1}\end{center}
 }
 \only<3>{
-\pgfdeclareimage[interpolate=true,width=0.95\textwidth]{a1}{fale}
+\pgfdeclareimage[interpolate=true,width=0.75\textwidth]{a1}{fale}
 \begin{center}\pgfuseimage{a1}\end{center}
 }
-\end{frame}
+\only<4>{
+\pgfdeclareimage[interpolate=true,width=0.5\textwidth]{fig9a}{fig9a}
+\pgfdeclareimage[interpolate=true,width=0.5\textwidth]{fig9b}{fig9b}
 
-\begin{frame}
-%\frametitle{Obecne prace -- pełne symulacje 3D} 
-Optymalna liczba procesorów dla symulacji w niskiej rozdzielczości ($2048\times128\times256$) to \alert{256}. Czas obliczeń: 1 miesiąc (\alert{720h}), liczba symulacji: \alert{kilkanaście}.
-\pgfdeclareimage[interpolate=true,width=0.5\textwidth]{pl1}{diffusion}
-\pgfdeclareimage[interpolate=true,width=0.5\textwidth]{pl2}{dysk}
 \begin{columns}
    \begin{column}{0.5\textwidth}
-      \pgfuseimage{pl1}
+      \begin{center}
+         \pgfuseimage{fig9a}
+      \end{center}
    \end{column}
    \begin{column}{0.5\textwidth}
-      \pgfuseimage{pl2}
+      \begin{center}
+         \pgfuseimage{fig9b}
+      \end{center}
+   \end{column}
+\end{columns}
+}
+\end{frame}
+
+\begin{frame}
+\frametitle{Pełne symulacje 3D} 
+\pgfdeclareimage[interpolate=true,width=0.5\textwidth]{pl1}{slice_nosg_04.png}
+\pgfdeclareimage[interpolate=true,width=0.5\textwidth]{pl2}{slice_sg_04.png}
+\pgfdeclareimage[interpolate=true,width=0.95\textwidth]{proj}{proj_sg}
+
+\only<1>{
+\begin{columns}
+   \begin{column}{0.5\textwidth}
+      \begin{center}
+         \pgfuseimage{pl1}
+      \end{center}
+   \end{column}
+   \begin{column}{0.5\textwidth}
+      \begin{center}
+         \pgfuseimage{pl2}
+      \end{center}
+   \end{column}
+\end{columns}
+}
+\only<2>{
+   \begin{center}
+      \pgfuseimage{proj}
+   \end{center}
+}
+\only<3>{
+\pgfdeclareimage[interpolate=true,width=0.5\textwidth]{hnosg}{hist2d_nosg_01.png}
+\pgfdeclareimage[interpolate=true,width=0.5\textwidth]{hsg}{hist2d_sg_01.png}
+\begin{columns}
+   \begin{column}{0.5\textwidth}
+      \begin{center}
+         \pgfuseimage{hnosg}
+      \end{center}
+   \end{column}
+   \begin{column}{0.5\textwidth}
+      \begin{center}
+         \pgfuseimage{hsg}
+      \end{center}
+   \end{column}
+\end{columns}
+}
+\only<4>{
+\pgfdeclareimage[interpolate=true,width=0.5\textwidth]{hnosg}{hist2d_nosg_02.png}
+\pgfdeclareimage[interpolate=true,width=0.5\textwidth]{hsg}{hist2d_sg_02.png}
+\begin{columns}
+   \begin{column}{0.5\textwidth}
+      \begin{center}
+         \pgfuseimage{hnosg}
+      \end{center}
+   \end{column}
+   \begin{column}{0.5\textwidth}
+      \begin{center}
+         \pgfuseimage{hsg}
+      \end{center}
+   \end{column}
+\end{columns}
+}
+\only<5>{
+\pgfdeclareimage[interpolate=true,width=0.5\textwidth]{hnosg}{hist2d_nosg_03.png}
+\pgfdeclareimage[interpolate=true,width=0.5\textwidth]{hsg}{hist2d_sg_03.png}
+\begin{columns}
+   \begin{column}{0.5\textwidth}
+      \begin{center}
+         \pgfuseimage{hnosg}
+      \end{center}
+   \end{column}
+   \begin{column}{0.5\textwidth}
+      \begin{center}
+         \pgfuseimage{hsg}
+      \end{center}
+   \end{column}
+\end{columns}
+}
+\only<6>{
+\pgfdeclareimage[interpolate=true,width=0.5\textwidth]{hnosg}{hist2d_nosg_04.png}
+\pgfdeclareimage[interpolate=true,width=0.5\textwidth]{hsg}{hist2d_sg_04.png}
+\begin{columns}
+   \begin{column}{0.5\textwidth}
+      \begin{center}
+         \pgfuseimage{hnosg}
+      \end{center}
+   \end{column}
+   \begin{column}{0.5\textwidth}
+      \begin{center}
+         \pgfuseimage{hsg}
+      \end{center}
+   \end{column}
+\end{columns}
+}
+\only<7>{
+\pgfdeclareimage[interpolate=true,width=0.5\textwidth]{hnosg}{hist2d_nosg_05.png}
+\pgfdeclareimage[interpolate=true,width=0.5\textwidth]{hsg}{hist2d_sg_05.png}
+\begin{columns}
+   \begin{column}{0.5\textwidth}
+      \begin{center}
+         \pgfuseimage{hnosg}
+      \end{center}
+   \end{column}
+   \begin{column}{0.5\textwidth}
+      \begin{center}
+         \pgfuseimage{hsg}
+      \end{center}
+   \end{column}
+\end{columns}
+}
+\end{frame}
+
+\begin{frame}
+\frametitle{Czy powstają obiekty związane grawitacyjnie?}
+\only<1>{
+\begin{enumerate}
+\item Identyfikacja wszystkich obiektów powiązanych topologicznie (\texttt{yt})
+\item $\tilde{E}_{\textrm{kin}} = \
+   \sum\limits_{i=1}^N \frac{m_i\tilde{\mathbf{v}}_i^2}{2}
+   + \sum\limits_{i=1}^N \frac{m_i \left(\alpha c_s\right)^2}{2}$,
+\item $\tilde{\Phi}_i(R,\varphi,z) = \Phi_i(R,\varphi,z) - \left<\Phi_i\right>_{z\varphi}(R).$
+\end{enumerate}
+\begin{block}{Kryterium związania grawitacyjnego}
+\begin{equation}
+\tilde{E}_{\textrm{kin}} < \sum\limits_{i=1}^N m_i\tilde{\Phi}_i \equiv E_{\textrm{pot}}
+\end{equation}
+\end{block}
+}
+
+\only<2>{
+\pgfdeclareimage[interpolate=true,width=0.5\textwidth]{hnosg}{bmass_vs_time}
+\pgfdeclareimage[interpolate=true,width=0.5\textwidth]{hsg}{nclumps_vs_time}
+\begin{columns}
+   \begin{column}{0.5\textwidth}
+      \begin{center}
+         \pgfuseimage{hnosg}
+      \end{center}
+   \end{column}
+   \begin{column}{0.5\textwidth}
+      \begin{center}
+         \pgfuseimage{hsg}
+      \end{center}
+   \end{column}
+\end{columns}
+    {\scriptsize Lewy panel przedstawia ilość masy pyłu, która została zgromadzona w~grawitacyjnie związanych
+     obiektach w~funkcji czasu. Wartość maksymalna osiągnięta po około 300
+     latach (od $4$ do $5\Mearth$ dla $\alpha = 0.05$) stanowi około $13$ -- $14\%$
+     całkowitej masy pyłu. Prawy panel przedstawia ilość grawitacyjnie
+     związanych obiektów w~funkcji czasu i parametru $\alpha$.}
+}
+\only<3>{
+   \pgfdeclareimage[interpolate=true,width=0.9\textwidth]{mh}{mass_hists}
+   \begin{center} \pgfuseimage{mh} \end{center}
+   {\scriptsize Histogramy masy obiektów związanych dla $\alpha = 0.01, 0.05, 0.1$
+   (odpowiednio panel lewy, środkowy i prawy) w~zakresie $[0,600]\Mceres$.
+   Szerokość pojedynczego przedziału wynosi $20\Mceres$. Na wewnętrznych
+   panelach znajdują się histogramy dla obiektów o masach mniejszych niż
+   $80\Mceres$. Szerokość pojedynczego przedziału na wewnętrznym panelu wynosi
+   $4\Mceres$.}
+}
+
+\only<4>{
+   \pgfdeclareimage[interpolate=true,width=0.9\textwidth]{mh}{mass_func}
+   \begin{center} \pgfuseimage{mh} \end{center}
+   {\scriptsize Złożenie histogramów masy obiektów związanych grawitacyjnie dla
+   $\alpha = 0.05$ dla $T \in [250, 300]$ lat (czerwone punkty). Niebieska linia
+   stanowi dopasowanie funkcji wykładniczej do liczby obiektów w~funkcji masy na
+   przedziale $[40,200]\Mceres$}
+}
+\end{frame}
+
+\begin{frame}
+\frametitle{Podsumowanie}
+\scriptsize
+\begin{itemize}
+   \item zarówno dwu- jak i trójwymiarowe symulacje quasi--globalnego dysku
+      gazowo--py\-ło\-we\-go, w którym oba wzajemnie ze sobą oddziałujące poprzez siłę
+      tarcia składniki są traktowane w przybliżeniu płynowym, stanowią wiarygodne
+      narzędzie do badania niestabilności strumieniowej;
+   \item algorytmy numeryczne zaimplementowane w kodzie \textsc{Piernik}
+      pozwalają na odtworzenie z wystarczającą dokładnością liniowej fazy
+      wzrostu niestabilności strumieniowej;
+   \item niestabilność strumieniowa prowadzi do wytworzenia się w gazowo--pyłowym
+      dysku obszarów, w których gęstość pyłu jest ponad stukrotnie wyższa niż
+      maksymalna początkowa gęstość pyłu;
+   \item niestabilność strumieniowa z uwzględnieniem samograwitacji materii
+      prowadzi do wytworzenia się populacji związanych grawitacyjnie, pyłowych
+      obiektów o spektralnym rozkładzie masy danym funkcją potęgową o wykładniku
+      $-1.25\pm0.12$;
+   \item masa pyłu zgromadzona w pojedynczych, grawitacyjnie związanych obiektach
+      odpowiada ciałom o rozmiarach rzędu kilkudziesięciu do kilkuset
+      kilometrów;
+   \item całkowita masa pyłu zgromadzona w grawitacyjnie związanych obiektach w
+      przedstawionym modelu 
+      jest wystarczająca do wytworzenia pojedynczego jądra gazowego
+      olbrzyma, bądź dwóch lub trzech planet skalistych;
+   \item dalsze prace nad modelem są potrzebne w celu uściślenia ilościowych
+      szacunków całkowitej masy, liczby i spektrum masowego powstających
+      planetezymali.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\end{frame}
+
+\begin{frame}
+\frametitle{Uwagi}
+   \pgfdeclareimage[interpolate=true,width=0.5\textwidth]{mh}{chap1_sed}
+\begin{columns}
+   \begin{column}{0.5\textwidth}
+      \begin{center}
+      \pgfuseimage{mh} 
+      \end{center}
+   \end{column}
+   \begin{column}{0.5\textwidth}
+   \only<1>{
+     {\scriptsize Rozkład widma energii dla gwiazdy HD 34282. Symbole oznaczają
+      obserwacje różnymi metodami dla odpowiednich długości fali. Do obserwacji
+      dopasowano następujące modele: linia przerywana model widma gwiazdowego
+      dla obiektu typu A3V $(T\sim 8600\K)$, cienka ciągła
+      linia model ciała doskonale czarnego dla $T=1400\K$,
+      linia kropkowana reprezentuje model dysku o nachyleniu $i=56^o$, tempie
+      akrecji $\dot{M} = 8.2\times10^{-9}\thinspace\Msun\yr^{-1}$
+      rozciągającym się od $0.31\AU$ do $705\AU$.}
+   }
+   \only<2>{
+   	\pgfdeclareimage[interpolate=true,width=0.9\textwidth]{mh2}{fig_text}
+	\begin{center}
+	\pgfuseimage{mh2}
+	\end{center}
+   }
+   \end{column}
+\end{columns}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Uwagi}
+{\scriptsize
+\textbf{Krok połówkowy}
+\begin{align}
+\mathbf{u}' &= 
+\left[
+   \left(1 + \gamma\rho'_{\textrm{G}}\Delta t / 2 \right)
+   \left(\rho_{\textrm{G}}\mathbf{u} + \mathbf{f}_{\textrm{G}} \Delta t / 2 \right) / \rho'_{\textrm{G}}
+   +\gamma \left( \rho_{\textrm{D}}\mathbf{w} + \mathbf{f}_{\textrm{D}}\Delta t / 2 \right) \Delta t / 2
+\right] / \Delta, \\
+\mathbf{w}' &= 
+\left[
+   \left(1 + \gamma\rho'_{\textrm{D}}\Delta t / 2 \right)
+   \left(\rho_{\textrm{D}}\mathbf{w} + \mathbf{f}_{\textrm{D}} \Delta t / 2 \right) / \rho'_{\textrm{D}}
+   +\gamma \left( \rho_{\textrm{G}}\mathbf{u} + \mathbf{f}_{\textrm{G}}\Delta t / 2 \right) \Delta t / 2
+\right] / \Delta,
+\end{align}
+gdzie:
+\begin{equation}
+\Delta = 1 + \gamma(\rho'_{\textrm{G}} + \rho'_{\textrm{D}})\Delta t / 2
+\end{equation}
+\textbf{Krok całkowity}
+\begin{align}
+\mathbf{u}^{(n+1)} &=
+\left[ 
+  \left(1 + \gamma \rho_{\textrm{G}}^{(n+1)} \Delta t / 2 \right)\mathbf{\psi}_{\textrm{G}} +
+       \left(\gamma \rho_{\textrm{D}}^{(n+1)} \Delta t / 2 \right)\mathbf{\psi}_{\textrm{D}}
+\right] / \Delta,  \\
+\mathbf{w}^{(n+1)} &= 
+\left[ 
+  \left(1 + \gamma \rho_{\textrm{D}}^{(n+1)} \Delta t / 2\right)\mathbf{\psi}_{\textrm{D}} +
+  \left(  \gamma \rho_{\textrm{G}}^{(n+1)} \Delta t / 2\right) \mathbf{\psi}_{\textrm{G}}
+\right] / \Delta,
+\end{align}
+gdzie:
+\begin{align}
+\mathbf{\psi}_{\textrm{G}} & = 
+\left[
+  \rho_{\textrm{G}} \mathbf{u} + \mathbf{f}'_{\textrm{G}}\Delta t - \gamma \rho_{\textrm{G}} \rho_{\textrm{D}} (\mathbf{u} - \mathbf{w}) \Delta t / 2
+\right] / {\rho_{\textrm{G}}^{(n+1)}}  \\
+\mathbf{\psi}_{\textrm{D}} & = 
+\left[
+  \rho_{\textrm{D}} \mathbf{w} + \mathbf{f}'_{\textrm{D}}\Delta t - \gamma \rho_{\textrm{G}} \rho_{\textrm{D}} (\mathbf{w} - \mathbf{u}) \Delta t / 2
+\right] / {\rho_{\textrm{D}}^{(n+1)}},\\
+\end{align}
+}
+\end{frame}
+
+\begin{frame}
+\frametitle{Uwagi}
+\pgfdeclareimage[interpolate=true,width=0.5\textwidth]{lp}{nosg_vlzd_growth}
+\pgfdeclareimage[interpolate=true,width=0.5\textwidth]{pp}{sg_vlzd_growth}
+\begin{columns}
+   \begin{column}{0.5\textwidth}
+      \begin{center}
+          \pgfuseimage{lp}
+      \end{center}
+   \end{column}
+   \begin{column}{0.5\textwidth}
+      \begin{center}
+          \pgfuseimage{pp}
+      \end{center}
    \end{column}
 \end{columns}
 \end{frame}
-
-\frame{
-   %\frametitle{Idea}
-   \begin{center}
-      \includegraphics[width=0.95\textwidth]{idea.png}
-      \begin{itemize}
-         \item{\includegraphics[height=0.6cm]{piernik_logo_HD.png} }
-         \item Algorytm Monte Carlo przy użyciu cząstek reprezentatywnych (Zsom \& Dullemond, 2008)
-         \item Prosty model kolizji (Ormel et al., 2007) -- decydujący czynnik $\Delta v$.
-      \end{itemize}
-   \end{center}
-}
-
-\frame{
-%\frametitle{Założenia}
-   Cząstki:
-      \begin{itemize}
-         \item są równomiernie rozdystrybuowane po objętości komórek Piernika -- nie ma potrzeby znania ich dokładnego położenia,
-         \item mogą się zderzać z innymi cząstkami tylko w obrębie jednej komórki,
-         \item mogą przemieszczać się pomiędzy komórkami,
-         \item mają określony wektor prędkości,
-         \item są poddawane oporowi aerodynamicznemu $\vec{F} = - \frac{1}{t_s}\left(\vec{v_p} - \vec{v_g} \right).$
-      \end{itemize}
-   Ponadto:
-      \begin{itemize}
-         \item{Względna prędkość cząstek jest obliczana na podstawie wyrażenia 
-               $\Delta v_{ik} = \sqrt{\Delta v_B^2 + \Delta v_T^2 + \left(\vec{v_i} - \vec{v_k}\right)^2}$,\\
-               gdzie $\Delta v_B$ wynika z ruchów Browna, \\
-               $\Delta v_T$ wynika z ,,podskalowej'' turbulencji, 
-               $|\vec{v_i} - \vec{v_k}|$ prędkości cząstek wzbudzone na skutek oddziaływania z gazem}
-         \item{Bierzemy pod uwagę dyfuzję pyłu powodowaną podskalową turbulencją}
-      \end{itemize}
-}
-
-\frame{
-   %\frametitle{Adwekcja, dyfuzja}
-   \begin{center}
-   \includegraphics[height=0.7\textheight]{test2.png}
-   \end{center}
-}
-
-\begin{frame}
-%\frametitle{Widmo energi kinetycznej gazu}
-      \begin{center}
-      \includegraphics[height=0.7\textheight]{spectrum3d.png}
-      \end{center}
-\end{frame}
-
-\begin{frame}
-%\frametitle{2D}
-      \pgfdeclareimage[interpolate=true,width=0.8\textwidth]{turb}{turb.png}
-      \begin{center}
-      \movie[poster,externalviewer,label=ccmovie]{\pgfuseimage{turb}}{turb.avi}\\
-      \end{center}
-\end{frame}
-
-\begin{frame}
-%\frametitle{3D}
-      \begin{center}
-      \includegraphics[height=0.7\textheight]{dust3d.png}
-      \end{center}
-\end{frame}
-
-\begin{frame}
-\scriptsize
-Problemy:
-\begin{enumerate}
-  \item \emph{Bardzo silny} wpływ turbulencji na fizyczne wyniki symulacji.
-  \item Całość jest \emph{przeraźliwie} wolna.
-\end{enumerate}
-Wykonana praca:
-\begin{itemize}
- \item zrównoleglenie modułu MC pod MPI (04/2011)  (2)
- \item dodanie tracera (05/2011) (1)
- \item przystosowanie modulu turbulencji z kodu Godunov (by G. Kowal) do Piernika (05/2011) (1)
- \item zadaptowanie restartow na potrzeby czastek i turbulencji (06/2011) (1)
- \item dodanie solvera Riemannowskiego (07/2011) (1)
- \item optymilizacja kodu MC (serial) (09/2011) (2)
- \item rozpoczęcie prac nad “portowaniem” MC na GPU (Damian Kaliszan, Artur Trojanowski) (11/2011) (2)
- \item adaptive time-stepping, multiresolution (11/2011) (2)
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-%\frametitle{Dlaczego potrzebujemy nowego solwera -- Wengen4}
-Izotermiczny 3D dysk na skraju niestabilności grawitacyjnej.
-\begin{columns}[c]
-\column{0.5\textwidth}
-\pgfdeclareimage[interpolate=true,width=.95\textwidth]{fl}{flash.png}
-\pgfuseimage{fl}\\ {\scriptsize Flash (courtesy of A. Gawryszczak)}
-\column{0.5\textwidth}
-\pgfdeclareimage[interpolate=true,width=.95\textwidth]{rtvd}{rtvd.png}
-\pgfdeclareimage[interpolate=true,width=.95\textwidth]{mhm}{mhm.png}
-\pgfdeclarei?
-mage[interpolate=true,width=.95\textwidth]{rtvd}{rtvd.png}
-\alt<2>{\movie[poster,externalviewer,label=ccmovie]{\pgfuseimage{mhm}}{wt4_512x512x104.avi}\\ {\scriptsize Piernik MHM}}
-{\pgfuseimage{rtvd}\\ {\scriptsize Piernik RTVD (courtesy of C. Monet)}}
-\end{columns}
-\end{frame}
-
 \end{document}
